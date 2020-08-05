@@ -1,4 +1,4 @@
 development:
   password: ${JORMON_KULI_KULI_TEST_PASSWORD}
-  theme_id: "82880200740"
+  theme_id: "82880430116"
   store: hintz-klocko1408.myshopify.com
