@@ -40,6 +40,7 @@
   {% include 'social-meta-tags' %}
 
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
 
   <script>
     var theme = {
@@ -106,6 +107,7 @@
   <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
   <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'application.js' | asset_url }}" defer="defer"></script>
 
   {{ content_for_header }}
 </head>
@@ -138,5 +140,10 @@
     <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
     <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
   </ul>
+
+  {% if request.page_type == 'page' and page.template_suffix == 'impact' %}
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet'/>
+  {% endif %}
 </body>
 </html>

@@ -1,1 +1,38 @@
 // put your styles here
+$mapMaxHeight: 900px;
+$markerSize: 20px;
+$kuliKuliEvergreen: #245C3A;
+$kkOrange: #FF6400;
+
+.map-container {
+  height: 0;
+  overflow: hidden;
+  padding-top: 1px / 2px * 100%;
+  position: relative;
+
+  #impact-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: $mapMaxHeight;
+  }
+}
+
+.impact-marker {
+  background-color: white;
+  border-radius: $markerSize;
+  border: 2px solid $kuliKuliEvergreen;
+  cursor: pointer;
+  width: $markerSize;
+  height: $markerSize;
+
+  transition-property: background-color, border-color;
+  transition-duration: 0.4s;
+
+  &.selected {
+    background-color: $kkOrange;
+    border-color: white;
+  }
+}
